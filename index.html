@@ -29,7 +29,7 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 32px rgba(168, 200, 255, 0.3);
-            max-width: 500px;
+            max-width: 520px;
             width: 90%;
         }
 
@@ -43,7 +43,44 @@
         .subtitle {
             font-size: 0.95rem;
             color: #999;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+
+        /* --- CONSIGNES --- */
+        .consignes {
+            background: rgba(255, 243, 205, 0.6);
+            border: 2px solid #ffd166;
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .consignes h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e09b00;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .consignes ol {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .consignes ol li {
+            font-size: 0.92rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .consignes ol li strong {
+            color: #e09b00;
         }
 
         /* --- PHRASE GÉNÉRÉE --- */
@@ -187,6 +224,17 @@
 <div class="container">
     <h1>🔢 Tables de Multiplication</h1>
     <p class="subtitle">Génère une table aléatoire et entraîne-toi !</p>
+
+    <!-- Consignes -->
+    <div class="consignes">
+        <h2>📋 Ce que tu dois faire :</h2>
+        <ol>
+            <li>Clique sur <strong>"Générer"</strong> pour obtenir une table au hasard.</li>
+            <li>Récite la table à <strong>haute voix</strong>, de 0 fois jusqu'à 12 fois.</li>
+            <li>Si tu hésites, clique sur <strong>"Afficher la table"</strong> et lis-la attentivement.</li>
+            <li>Si c'est la table de <strong>0 ou de 1</strong>, récite-la puis génère <strong>une nouvelle table</strong> immédiatement.</li>
+        </ol>
+    </div>
 
     <!-- Phrase générée -->
     <div class="phrase-box vide" id="phraseBox">
