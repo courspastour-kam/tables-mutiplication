@@ -13,44 +13,44 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            background: linear-gradient(135deg, #a8edea, #fed6e3, #f9f7f7);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #333;
         }
 
         .container {
             text-align: center;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(168, 200, 255, 0.3);
             max-width: 500px;
             width: 90%;
         }
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 10px;
-            color: #e94560;
-            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+            margin-bottom: 8px;
+            color: #ff6b9d;
+            text-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
         }
 
         .subtitle {
             font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: #999;
             margin-bottom: 30px;
         }
 
         /* --- PHRASE GÉNÉRÉE --- */
         .phrase-box {
-            background: rgba(233, 69, 96, 0.15);
-            border: 2px solid #e94560;
-            border-radius: 12px;
+            background: rgba(255, 182, 214, 0.2);
+            border: 2px solid #ff6b9d;
+            border-radius: 14px;
             padding: 20px;
             margin-bottom: 25px;
             min-height: 70px;
@@ -60,18 +60,21 @@
             transition: all 0.3s ease;
         }
 
-        .phrase-box p {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 0.5px;
+        .phrase-box.vide {
+            border-color: #ccc;
+            background: rgba(200, 200, 200, 0.1);
         }
 
-        .phrase-box.vide p {
-            color: rgba(255, 255, 255, 0.3);
+        #phraseText {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #e05588;
+        }
+
+        .phrase-box.vide #phraseText {
+            color: #bbb;
+            font-weight: 400;
             font-style: italic;
-            font-weight: normal;
-            font-size: 1rem;
         }
 
         /* --- BOUTONS --- */
@@ -80,62 +83,63 @@
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         button {
             padding: 14px 28px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
             border: none;
-            border-radius: 10px;
+            border-radius: 50px;
             cursor: pointer;
             transition: all 0.2s ease;
-            letter-spacing: 0.5px;
-        }
-
-        button:active {
-            transform: scale(0.95);
         }
 
         #btnGenerer {
-            background: linear-gradient(135deg, #e94560, #c0392b);
+            background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
             color: white;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
         }
 
         #btnGenerer:hover {
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.5);
+        }
+
+        #btnGenerer:active {
+            transform: translateY(0);
         }
 
         #btnAfficher {
-            background: linear-gradient(135deg, #0f3460, #533483);
-            color: white;
-            box-shadow: 0 4px 15px rgba(83, 52, 131, 0.4);
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+            color: #2a7a5a;
+            box-shadow: 0 4px 15px rgba(132, 250, 176, 0.4);
         }
 
-        #btnAfficher:hover {
-            background: linear-gradient(135deg, #533483, #7b2d8b);
-            box-shadow: 0 6px 20px rgba(83, 52, 131, 0.6);
+        #btnAfficher:hover:not(:disabled) {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(132, 250, 176, 0.5);
+        }
+
+        #btnAfficher:active:not(:disabled) {
+            transform: translateY(0);
         }
 
         #btnAfficher:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            transform: none;
+            background: linear-gradient(135deg, #ddd, #eee);
+            color: #aaa;
             box-shadow: none;
+            cursor: not-allowed;
         }
 
         /* --- TABLE --- */
         .table-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             display: none;
+            background: rgba(143, 211, 244, 0.15);
+            border: 2px solid #8fd3f4;
+            border-radius: 14px;
+            padding: 20px;
             animation: fadeIn 0.4s ease;
         }
 
@@ -144,49 +148,49 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        .table-box h2 {
-            font-size: 1.1rem;
+        #tabletitre {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4a90d9;
             margin-bottom: 15px;
-            color: #a8dadc;
         }
 
-        .table-liste {
+        #tableListe {
             list-style: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
         }
 
-        .table-liste li {
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 8px;
+        #tableListe li {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
             padding: 8px 12px;
             font-size: 1rem;
-            color: #fff;
-            border-left: 3px solid #e94560;
-            text-align: left;
+            color: #555;
+            border: 1px solid rgba(143, 211, 244, 0.4);
             transition: background 0.2s;
         }
 
-        .table-liste li:hover {
-            background: rgba(233, 69, 96, 0.2);
+        #tableListe li:hover {
+            background: rgba(255, 255, 255, 1);
         }
 
-        .table-liste li span {
-            color: #e94560;
-            font-weight: bold;
+        #tableListe li span {
+            font-weight: 700;
+            color: #ff6b9d;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🎲 Tables de Multiplication</h1>
-    <p class="subtitle">Génère une table au hasard et entraîne-toi !</p>
+    <h1>🔢 Tables de Multiplication</h1>
+    <p class="subtitle">Génère une table aléatoire et entraîne-toi !</p>
 
     <!-- Phrase générée -->
     <div class="phrase-box vide" id="phraseBox">
-        <p id="phraseText">Clique sur "Générer" pour commencer…</p>
+        <p id="phraseText">Clique sur "Générer" pour commencer...</p>
     </div>
 
     <!-- Boutons -->
@@ -197,34 +201,29 @@
 
     <!-- Table affichée -->
     <div class="table-box" id="tableBox">
-        <h2 id="tabletitre"></h2>
-        <ul class="table-liste" id="tableListe"></ul>
+        <p id="tabletitre"></p>
+        <ul id="tableListe"></ul>
     </div>
 </div>
 
 <script>
     let nombreActuel = null;
 
-    // ----- Génère un nombre aléatoire et affiche la phrase -----
     function genererTable() {
-        nombreActuel = Math.floor(Math.random() * 13); // 0 à 12
+        nombreActuel = Math.floor(Math.random() * 13);
 
-        // Mise à jour de la phrase
         const phraseBox  = document.getElementById('phraseBox');
         const phraseText = document.getElementById('phraseText');
 
         phraseText.textContent = `Récite la table de multiplication de ${nombreActuel}`;
         phraseBox.classList.remove('vide');
 
-        // Activation du bouton "Afficher"
         document.getElementById('btnAfficher').disabled = false;
 
-        // Masquer la table précédente
         const tableBox = document.getElementById('tableBox');
         tableBox.style.display = 'none';
     }
 
-    // ----- Affiche la table complète -----
     function afficherTable() {
         if (nombreActuel === null) return;
 
